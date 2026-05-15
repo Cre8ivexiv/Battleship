@@ -1,5 +1,6 @@
 import json
 from cell import Cell
+from ship import Ship
 
 
 class GameBoard:
@@ -270,7 +271,7 @@ class GameBoard:
                         remaining.append(ship.get_size())
         return remaining
 
-    def to_state(self):
+    def serialize(self):
         return {
             "rows": self.__num_rows,
             "cols": self.__num_cols,
@@ -278,7 +279,7 @@ class GameBoard:
                 [
                     {
                         "hit": self.__board[r][c].is_hit(),
-                        "ship": self.__board[r][c].get_ship().get_name() if self.__board[r][c].has_ship() else None,
+                        "ship": self.__serialize_ship(self.__board[r][c].get_ship()) if self.__board[r][c].has_ship() else None,
                     }
                     for c in range(self.__num_cols)
                 ]
@@ -286,9 +287,82 @@ class GameBoard:
             ],
         }
 
+    def __serialize_ship(self, ship):
+        return {
+            "name": ship.get_name(),
+            "symbol": ship.get_letter(),
+            "size": ship.get_size(),
+        }
+
+    def deserialize(self, data, ships_list=None):
+        rows = data.get("rows", self.__num_rows)
+        cols = data.get("cols", self.__num_cols)
+        if rows != self.__num_rows or cols != self.__num_cols:
+            self.__num_rows = rows
+            self.__num_cols = cols
+            self.__board = []
+            for r in range(self.__num_rows):
+                row = []
+                for c in range(self.__num_cols):
+                    row.append(Cell(r, c))
+                self.__board.append(row)
+
+        if ships_list is None:
+            ships_list = []
+        for ship in ships_list:
+            ship.clear_cells()
+
+        ship_lookup = {}
+        for ship in ships_list:
+            ship_lookup[ship.get_name()] = ship
+            ship_lookup[ship.get_letter()] = ship
+
+        for r in range(self.__num_rows):
+            for c in range(self.__num_cols):
+                self.__board[r][c].set_ship(None)
+                self.__board[r][c].set_hit(False)
+
+        for r, row_data in enumerate(data.get("cells", [])):
+            if r >= self.__num_rows:
+                break
+            for c, cell_data in enumerate(row_data):
+                if c >= self.__num_cols:
+                    break
+                cell = self.__board[r][c]
+                ship_info = cell_data.get("ship")
+                if ship_info:
+                    ship = self.__get_deserialized_ship(ship_info, ship_lookup)
+                    cell.set_ship(ship)
+                    ship.add_cell(cell)
+                cell.set_hit(bool(cell_data.get("hit", False)))
+        self.__chain_triggered_ships.clear()
+
+    def __get_deserialized_ship(self, ship_info, ship_lookup):
+        if isinstance(ship_info, dict):
+            name = ship_info.get("name")
+            symbol = ship_info.get("symbol")
+            size = ship_info.get("size", 0)
+        else:
+            name = ship_info
+            symbol = None
+            size = 0
+
+        ship = ship_lookup.get(name)
+        if ship is None and symbol is not None:
+            ship = ship_lookup.get(symbol)
+        if ship is None:
+            symbol = symbol or (name[:1].upper() if name else "?")
+            ship = Ship(name, symbol, size)
+            ship_lookup[name] = ship
+            ship_lookup[symbol] = ship
+        return ship
+
+    def to_state(self):
+        return self.serialize()
+
     def save_board_state(self, filepath):
         with open(filepath, "w", encoding="utf-8") as f:
-            json.dump(self.to_state(), f, indent=2)
+            json.dump(self.serialize(), f, indent=2)
 
     def __format_console_value(self, cell, planning=False, easy_reveal=False):
         value = cell.get_cell_planning_value() if planning else cell.get_cell_attack_value()

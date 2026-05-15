@@ -634,7 +634,12 @@ class GameGUI:
             self.player_idle_job = None
 
     def __save_game(self):
-        path = filedialog.asksaveasfilename(defaultextension=".json", filetypes=[("JSON files", "*.json")])
+        path = filedialog.asksaveasfilename(
+            defaultextension=".json",
+            filetypes=[("JSON files", "*.json")],
+            initialdir=os.path.dirname(__file__),
+            initialfile="save.json",
+        )
         if not path:
             return
         data = {
@@ -642,17 +647,79 @@ class GameGUI:
             "phase": self.phase,
             "current_ship_index": self.current_ship_index,
             "current_player_index": self.current_player_index,
-            "plan_board": self.p1.get_plan_board().to_state(),
-            "attack_board": self.p1.get_attack_board().to_state(),
-            "computer_plan_board": self.p2.get_plan_board().to_state(),
-            "computer_attack_board": self.p2.get_attack_board().to_state(),
+            "plan_board": self.p1.get_plan_board().serialize(),
+            "attack_board": self.p1.get_attack_board().serialize(),
+            "computer_plan_board": self.p2.get_plan_board().serialize(),
+            "computer_attack_board": self.p2.get_attack_board().serialize(),
         }
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
         self.status_var.set("Game saved")
 
     def __load_game(self):
-        messagebox.showinfo("Load game", "A basic Save button is included. Full GUI load can be added on top of this skeleton if needed.")
+        path = os.path.join(os.path.dirname(__file__), "save.json")
+        if not os.path.exists(path):
+            messagebox.showerror("Load game", "No saved game found")
+            return
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            self.__cancel_idle_timer()
+            self.phase = data.get("phase", "battle")
+            self.current_ship_index = data.get("current_ship_index", 0)
+            self.current_player_index = data.get("current_player_index", 0)
+            self.drag_data = None
+            self.warning_cells = set()
+            self.selected_ship = None
+            self.ship_orientations = {}
+
+            difficulty = data.get("difficulty", self.difficulty.get())
+            self.difficulty.set(difficulty)
+            diff = difficulty.lower()
+
+            self.gboard1 = GameBoard()
+            self.gboard2 = GameBoard()
+            self.p1 = HumanPlayer("Player 1", self.gboard1, self.gboard2, difficulty=diff)
+            self.p2 = ComputerPlayer("Computer", self.gboard2, self.gboard1, difficulty=diff)
+
+            player_board_data = data.get("plan_board") or data.get("computer_attack_board")
+            enemy_board_data = data.get("computer_plan_board") or data.get("attack_board")
+            if player_board_data is None or enemy_board_data is None:
+                raise ValueError("Saved game is missing board data")
+
+            self.gboard1.deserialize(player_board_data, self.p1.get_ships_list())
+            self.gboard2.deserialize(enemy_board_data, self.p2.get_ships_list())
+            self.players_list = (self.p1, self.p2)
+
+            self.__restore_ship_orientations(self.p1.get_ships_list())
+            self.__restore_ship_orientations(self.p2.get_ships_list())
+
+            if self.phase == "placement":
+                self.start_button.config(state=tk.NORMAL)
+                self.randomise_button.config(state=tk.NORMAL)
+                self.status_var.set("Saved setup loaded. Drag ships or press Start.")
+            else:
+                self.start_button.config(state=tk.DISABLED)
+                self.randomise_button.config(state=tk.DISABLED)
+                if self.phase == "finished":
+                    self.status_var.set("Saved finished game loaded.")
+                elif self.current_player_index == 1:
+                    self.status_var.set("Saved game loaded. Computer is thinking...")
+                    self.mw.after(1000, self.__computer_turn)
+                else:
+                    self.status_var.set("Saved game loaded. Your turn.")
+                    self.__start_idle_timer()
+
+            self.__draw_all()
+        except Exception:
+            messagebox.showerror("Load game", "Failed to load game")
+
+    def __restore_ship_orientations(self, ships):
+        for ship in ships:
+            cells = [(cell.get_x(), cell.get_y()) for cell in ship.get_cells_list()]
+            if cells:
+                self.ship_orientations[ship] = self.__orientation_from_coords(cells)
 
 
 def main():
