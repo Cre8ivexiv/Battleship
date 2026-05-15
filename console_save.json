@@ -1,0 +1,1980 @@
+{
+  "difficulty": "easy",
+  "current_player_index": 0,
+  "p1_plan": {
+    "rows": 10,
+    "cols": 10,
+    "cells": [
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Destroyer",
+            "symbol": "D",
+            "size": 2
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Destroyer",
+            "symbol": "D",
+            "size": 2
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ]
+    ]
+  },
+  "p1_attack": {
+    "rows": 10,
+    "cols": 10,
+    "cells": [
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Destroyer",
+            "symbol": "D",
+            "size": 2
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Destroyer",
+            "symbol": "D",
+            "size": 2
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ]
+    ]
+  },
+  "p2_plan": {
+    "rows": 10,
+    "cols": 10,
+    "cells": [
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Destroyer",
+            "symbol": "D",
+            "size": 2
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Destroyer",
+            "symbol": "D",
+            "size": 2
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ]
+    ]
+  },
+  "p2_attack": {
+    "rows": 10,
+    "cols": 10,
+    "cells": [
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Battleship",
+            "symbol": "B",
+            "size": 4
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Aircraft carrier",
+            "symbol": "A",
+            "size": 5
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Submarine",
+            "symbol": "S",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Destroyer",
+            "symbol": "D",
+            "size": 2
+          }
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Destroyer",
+            "symbol": "D",
+            "size": 2
+          }
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": {
+            "name": "Cruiser",
+            "symbol": "C",
+            "size": 3
+          }
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ],
+      [
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        },
+        {
+          "hit": false,
+          "ship": null
+        }
+      ]
+    ]
+  }
+}

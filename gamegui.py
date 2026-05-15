@@ -1,3 +1,4 @@
+from importlib.resources import path
 import json
 import os
 import random
@@ -360,6 +361,10 @@ class GameGUI:
         if any(not ship.get_cells_list() for ship in self.p1.get_ships_list()):
             messagebox.showerror("Cannot start", "All ships must be placed before starting.")
             return
+        
+        diff = self.difficulty.get().lower()
+        self.p2.set_difficulty(diff)
+
         self.phase = "battle"
         self.drag_data = None
         self.warning_cells = set()
@@ -657,8 +662,11 @@ class GameGUI:
         self.status_var.set("Game saved")
 
     def __load_game(self):
-        path = os.path.join(os.path.dirname(__file__), "save.json")
-        if not os.path.exists(path):
+        path = filedialog.askopenfilename(
+        defaultextension=".json",
+        filetypes=[("JSON files", "*.json")],
+        initialdir=os.path.dirname(__file__))
+        if not path:
             messagebox.showerror("Load game", "No saved game found")
             return
         try:

@@ -42,6 +42,9 @@ class Player:
 
     def get_difficulty(self):
         return self.__difficulty
+    
+    def set_difficulty(self, difficulty):
+        self.__difficulty = difficulty
 
     def has_lost_game(self):
         for ship in self.__ships_list:
@@ -139,6 +142,12 @@ class HumanPlayer(Player):
                 reminder_shown = True
             input_str = input("Choose cell to attack (e.g. A3): ").strip().upper()
             parsed = self._parse_coord(input_str)
+            if input_str == "SAVE":
+                return False, {"save_requested": True}
+            # ----------------------
+
+            parsed = self._parse_coord(input_str)
+
             if parsed is None:
                 print("Input should be a letter A-J followed by a number 0-9")
                 continue
