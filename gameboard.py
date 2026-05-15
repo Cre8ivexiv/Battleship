@@ -11,6 +11,7 @@ class GameBoard:
     def __init__(self, num_rows=10, num_cols=10):
         self.__num_rows = num_rows
         self.__num_cols = num_cols
+        self.__chain_triggered_ships = set()
         self.__board = []
         for i in range(self.__num_rows):
             row = []
@@ -32,6 +33,7 @@ class GameBoard:
             for j in range(self.__num_cols):
                 self.__board[i][j].set_ship(None)
                 self.__board[i][j].set_hit(False)
+        self.__chain_triggered_ships.clear()
 
     def is_space_free(self, row, col):
         if row < 0 or row >= self.__num_rows or col < 0 or col >= self.__num_cols:
@@ -45,6 +47,7 @@ class GameBoard:
 
     def attack_cell(self, row, col):
         cell = self.__board[row][col]
+        was_sunk_before = cell.has_ship() and cell.get_ship().is_sunk()
         cell.set_hit(True)
         result = {
             "hit": cell.has_ship(),
@@ -53,6 +56,8 @@ class GameBoard:
             "ship_symbol": None,
             "sunk": False,
             "sunk_cells": [],
+            "chain_hits": [],
+            "chain_sunk": [],
         }
         if cell.has_ship():
             ship = cell.get_ship()
@@ -61,7 +66,45 @@ class GameBoard:
             result["sunk"] = ship.is_sunk()
             if result["sunk"]:
                 result["sunk_cells"] = [c.get_coords() for c in ship.get_cells_list()]
+                if not was_sunk_before:
+                    self.__apply_chain_damage(ship, result)
         return result
+
+    def __apply_chain_damage(self, ship, result):
+        ship_key = id(ship)
+        if ship_key in self.__chain_triggered_ships:
+            return
+        self.__chain_triggered_ships.add(ship_key)
+
+        for row, col in self.__ship_radius_cells(ship):
+            cell = self.__board[row][col]
+            if cell in ship.get_cells_list():
+                continue
+            was_hit = cell.is_hit()
+            was_sunk_before = cell.has_ship() and cell.get_ship().is_sunk()
+            cell.set_hit(True)
+            if not was_hit:
+                result["chain_hits"].append((row, col))
+            if cell.has_ship():
+                affected_ship = cell.get_ship()
+                if affected_ship.is_sunk() and not was_sunk_before:
+                    sunk_cells = [c.get_coords() for c in affected_ship.get_cells_list()]
+                    result["chain_sunk"].append({
+                        "ship_name": affected_ship.get_name(),
+                        "ship_symbol": affected_ship.get_letter(),
+                        "sunk_cells": sunk_cells,
+                    })
+                    self.__apply_chain_damage(affected_ship, result)
+
+    def __ship_radius_cells(self, ship):
+        radius_cells = set()
+        for cell in ship.get_cells_list():
+            row, col = cell.get_coords()
+            for rr in range(row - 1, row + 2):
+                for cc in range(col - 1, col + 2):
+                    if 0 <= rr < self.__num_rows and 0 <= cc < self.__num_cols:
+                        radius_cells.add((rr, cc))
+        return radius_cells
 
     def cell_has_hit_ship(self, row, col):
         cell = self.__board[row][col]
@@ -90,6 +133,51 @@ class GameBoard:
         if orient == "Vertical":
             return self.__place_ship_vertically(ship, row, col)
         return False
+
+    def remove_ship(self, ship):
+        for row in range(self.__num_rows):
+            for col in range(self.__num_cols):
+                cell = self.__board[row][col]
+                if cell.get_ship() is ship:
+                    cell.set_ship(None)
+                    cell.set_hit(False)
+        ship.clear_cells()
+
+    def get_ship_position_cells(self, ship, row, col, orient="Horizontal"):
+        if orient == "Horizontal":
+            start_col = self.__fit_horizontal_start(ship, col)
+            if row < 0 or row >= self.__num_rows:
+                return []
+            return [(row, c) for c in range(start_col, start_col + ship.get_size())]
+        if orient == "Vertical":
+            start_row = self.__fit_vertical_start(ship, row)
+            if col < 0 or col >= self.__num_cols:
+                return []
+            return [(r, col) for r in range(start_row, start_row + ship.get_size())]
+        return []
+
+    def can_place_ship_at(self, ship, row, col, orient="Horizontal", ignore_ship=None, require_spacing=False):
+        cells = self.get_ship_position_cells(ship, row, col, orient)
+        if len(cells) != ship.get_size():
+            return False
+        for r, c in cells:
+            existing_ship = self.__board[r][c].get_ship()
+            if existing_ship is not None and existing_ship is not ignore_ship:
+                return False
+        if require_spacing:
+            for r, c in cells:
+                for rr in range(r - 1, r + 2):
+                    for cc in range(c - 1, c + 2):
+                        if 0 <= rr < self.__num_rows and 0 <= cc < self.__num_cols:
+                            nearby_ship = self.__board[rr][cc].get_ship()
+                            if nearby_ship is not None and nearby_ship is not ignore_ship:
+                                return False
+        return True
+
+    def place_ship_with_spacing(self, ship, row, col, orient="Horizontal"):
+        if not self.can_place_ship_at(ship, row, col, orient, require_spacing=True):
+            return False
+        return self.place_ship(ship, row, col, orient)
 
     def __fit_horizontal_start(self, ship, start_col):
         if start_col + ship.get_size() > self.__num_cols:
